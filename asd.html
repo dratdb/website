@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maqased Document Clearing Services</title>
+    <link href="favicon.png" rel="shortcut icon" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.6.2/tailwind.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::selection{
+  background: rgb(0,123,255,0.3);
+}
+.content{
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 30px;
+}
+.navbar{
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  padding: 25px 0;
+  transition: all 0.3s ease;
+}
+.navbar.sticky{
+  background: #00b6f8;
+  padding: 10px 0;
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+}
+.navbar .content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .logo a{
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.navbar .menu-list{
+  display: inline-flex;
+}
+.menu-list li{
+  list-style: none;
+}
+.menu-list li a{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.menu-list li a:hover{
+  color: #007bff;
+}
+.banner{
+  background: url("/img.jpg") no-repeat;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.about{
+  padding: 30px 0;
+}
+.about .title{
+  font-size: 38px;
+  font-weight: 700;
+}
+.about p{
+  padding-top: 20px;
+  text-align: justify;
+}
+.icon{
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+.menu-list .cancel-btn{
+  position: absolute;
+  right: 30px;
+  top: 20px;
+}
+@media (max-width: 1230px) {
+  .content{
+    padding: 0 60px;
+  }
+}
+@media (max-width: 1100px) {
+  .content{
+    padding: 0 40px;
+  }
+}
+@media (max-width: 900px) {
+  .content{
+    padding: 0 30px;
+  }
+}
+@media (max-width: 868px) {
+  body.disabled{
+    overflow: hidden;
+  }
+
+  .icon{
+    display: block;
+  }
+  .icon.hide{
+    display: none;
+  }
+  .navbar .menu-list{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: 400px;
+    left: -100%;
+    top: 0px;
+    display: block;
+    padding: 40px 0;
+    text-align: center;
+    background: #222;
+    transition: all 0.3s ease;
+  }
+  .navbar.show .menu-list{
+    left: 0%;
+  }
+  .navbar .menu-list li{
+    margin-top: 45px;
+  }
+  .navbar .menu-list li a{
+    font-size: 23px;
+    margin-left: -100%;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .navbar.show .menu-list li a{
+    margin-left: 0px;
+  }
+}
+@media (max-width: 380px) {
+  .navbar .logo a{
+    font-size: 27px;
+  }
+}
+@media (max-width: 700px) {
+  .banner{
+  background: url("/img1.jpg") no-repeat;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+}
+
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+
+
+ <style>   
+        .whats-app {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 19px;
+    right: 18px;
+    background-color: #629c54;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+/*    box-shadow: 2px 2px 3px #999;*/
+    z-index: 100;
+}
+
+.my-float {
+    margin-top: 13px;
+}
+</style>
+<a  class="whats-app" href="https://api.whatsapp.com/send?phone="target="_blank">
+  <i class="fab fa-whatsapp my-float"></i>
+</a>
+<body onscroll="myFunction()">
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo">
+        <img src="logo.png">
+      </div>
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+        <li id="lil"><a href="#">Home</a></li>
+        <li id="lil"><a href="#about">About</a></li>
+        <li id="lil"><a href="#service">Services</a></li>
+        <li id="lil"><a href="/faqs.html">Faqs</a></li>
+        <li id="lil"><a href="/contact.html">Contact</a></li>
+      </ul>
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+  <div class="banner"></div>
+  <div class="sm:flex items-center max-w-screen-xl">
+    <div class="sm:w-1/2 p-10">
+            <div class="image object-center text-center">
+              <img src="about.png">
+
+            </div>
+    </div>
+
+    <div class="sm:w-1/2 p-5 reveal" id="about">
+        <div class="text">
+            <span class="text-gray-500 border-b-2 border-indigo-600 uppercase">About us</span>
+            <h2 class="my-4 font-bold text-3xl  sm:text-4xl ">About <span class="text-indigo-600">Our Company</span></h2>
+            <p class="text-gray-700"><b>Maqased</b> documents clearing is dedicated to helping you fulfil your desire to open your own company in the UAE. Maqased dc, a company founded in Dubai, has assisted numerous big and small businesses in successfully establishing their operations over the years. This experience supports Maqased documents clearing's promise to offer hassle-free and comprehensive business setup services. We completely free you from the tiresome processes to set up your business, regardless of whether you are an established businessperson, an emerging entrepreneur, or someone just starting out in the SME sector.</p>
+        </div>
+    </div>
+</div>
+<hr>
+
+    <div class="sercon" id="service">
+      <h1>Our Srvice</h1>
+      <div class="row">
+        <div class="service reveal">
+          <i class="fa-solid fa-business-time"></i>
+          <h2>Business Setup </h2>
+          <p>hello iam naimzcp in this timw we are</p>
+        </div>
+        <div class="service reveal">
+          <i class="fa-solid fa-diagram-project"></i>
+          <h2>PRO Services in UAE</h2>
+          <p>hello iam naimzcp in this timw we are</p>
+        </div>
+        <div class="service reveal">
+          <i class="fa-solid fa-id-card"></i>
+          <h2>Emirates Id Typing</h2>
+          <p>hello iam naimzcp in this timw we are</p>
+        </div>
+        <div class="service reveal">
+          <i class="fa-solid fa-building-flag"></i>
+          <h2>Embassy Attestation</h2>
+          <p>hello iam naimzcp in this timw we are</p>
+        </div>
+        <div class="service reveal">
+          <i class="fa-solid fa-keyboard"></i>
+          <h2>Typing Services</h2>
+          <p>hello iam naimzcp in this timw we are</p>
+        </div>
+        <div class="service reveal">
+          <i class="fa-solid fa-file-invoice"></i>
+          <h2>Document Clearing</h2>
+          <p>hello iam naimzcp in this timw we are</p>
+        </div>
+        <div class="service reveal">
+          <i class="fa-solid fa-notes-medical"></i>
+          <h2>Health insurance</h2>
+          <p>hello iam naimzcp in this timw we are</p>
+        </div>
+        <div class="service reveal">
+          <i class="fa-brands fa-cc-visa"></i>
+          <h2>Visa & Work Permits</h2>
+          <p>hello iam naimzcp in this timw we are</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ <footer style="margin-top: 5%;">
+        <div class="footer-content">
+            <h3>Maqased - Document Clearing</h3>
+            <p>Maqased documents clearing committed to realizing your dream of having your own business in the UAE. Established in Dubai, Maqased dc has helped a host of big and small companies successfully set up their businesses over the years.</p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li>SO </li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2020 Naz-Devs. designed by <span>Naz-Devs</span></p>
+        </div>
+    </footer>
+
+<style type="text/css">
+  .sercon{
+    width: 100%;
+    height: vh;
+    padding: 0 8%;
+  }
+  .sercon h1{
+    text-align: center;
+    padding-top: 10%;
+    margin-bottom: 60px;
+    font-size: 35px;
+    font-weight: 600;
+    position: relative;
+  }
+  .sercon h1::after{
+    content: '';
+    background: #303ef7;
+    width: 100px;
+    height: 5px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+
+  }
+  .sercon .row{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;}
+  .service{
+    transition: transfrom 0.5s, background 0.5s;
+    text-align: center;
+    padding: 25px 10px;
+    border-radius: 14px;
+    cursor: pointer;
+    background: transparent;
+  }
+  .service i{
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #303ef7;
+  }
+  .service h2{
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .service:hover{
+    transition: 1;
+    background: #303ef7;
+    color: #fff;
+    transform: scale(1.05);
+  }
+  .service:hover i{
+    transition: 1;
+    color: #fff;
+  }
+</style>
+<style type="text/css">
+  footer{
+    
+    background: #5a67d8;
+    
+    width: 100%;
+    font-family: "Open Sans";
+    padding-top: 40px;
+    color: #fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+}
+.socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+
+}
+.socials a:hover i{
+    color: aqua;
+}
+
+.footer-bottom{
+    background: #5a6767;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+</style>
+  <script type="text/javascript">
+    var lil = document.getElementById("lil");
+    function myFunction() {
+      lil.style.color = "red";
+    }
+  </script>
+  <script>
+    const body = document.querySelector("body");
+    const navbar = document.querySelector(".navbar");
+    const menuBtn = document.querySelector(".menu-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    menuBtn.onclick = ()=>{
+      navbar.classList.add("show");
+      menuBtn.classList.add("hide");
+      body.classList.add("disabled");
+    }
+    cancelBtn.onclick = ()=>{
+      body.classList.remove("disabled");
+      navbar.classList.remove("show");
+      menuBtn.classList.remove("hide");
+    }
+    window.onscroll = ()=>{
+      this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+    }
+  </script>
+  <style type="text/css">
+    .reveal{
+      transform: translateY(150px);
+      opacity: 0;
+      transition: all 2s ease;
+    }
+    .reveal.active{
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  </style>
+  <script type="text/javascript">
+    window.addEventListener('scroll', reveal);
+
+    function reveal(){
+      var reveals = document.querySelectorAll('.reveal')
+      for(var i = 0; i < reveals.length; i++){
+        var windowheight = window.innerHight;
+        var revealtop = reveals[i].getBoundingClientRect().top;
+        var revealpoint = 150;
+
+        if(revealtop < windowheight - revealpoint){
+          reveals[i].classList.add('active');
+        }
+        else{
+          reveals[i].classList.add('active');
+        }
+      }
+    }
+  </script>
+  <script src="https://kit.fontawesome.com/83fe534cf6.js" crossorigin="anonymous"></script>
+</body>
+</html>
