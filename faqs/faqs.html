@@ -1,0 +1,713 @@
+<html>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<style type="text/css">
+	@import 'https://fonts.googleapis.com/css?family=Montserrat';
+* {
+  font-family: Montserrat;
+}
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.5;
+  box-sizing: border-box
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: #777;
+  text-decoration: none;
+}
+
+p {
+  margin: 0 0 45px 0;
+  text-align: justify;
+}
+
+.header {
+  width: 80%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: Montserrat;
+  font-weight: 600;
+  color: #484848;
+  margin: 30px 0 25px 0;
+  line-height: 1.3
+}
+
+.container {
+  padding: 0 20px;
+  margin: 0 auto
+}
+
+.container:after,
+.container:before {
+  content: " ";
+  display: table
+}
+
+.container:after {
+  clear: both
+}
+
+.intro h1 {
+  color: #000;
+}
+
+.intro h1 strong {
+  color: #007bff
+}
+
+
+/* - link under - */
+
+.link-arrow:after {
+  content: '';
+  background-size: 100% 100%;
+  width: 16px;
+  height: 12px;
+  position: absolute;
+  top: 5px;
+  right: -28px;
+  -webkit-transition: all .4s cubic-bezier(.35, 1, .33, 1);
+  transition: all .4s cubic-bezier(.35, 1, .33, 1)
+}
+
+.link-arrow:hover:after {
+  right: -35px
+}
+
+.link-arrow.link-arrow-white:after {
+  background-size: 100% 100%
+}
+
+.link-arrow-hover:after {
+  right: -35px
+}
+
+.link {
+  display: inline-block;
+  position: relative;
+  border: none;
+  padding-bottom: 4px;
+  text-transform: uppercase;
+  font-family: Montserrat, helvetica, arial, sans-serif;
+  font-weight: 700
+}
+
+.link:active,
+.link:focus,
+.link:hover {
+  outline: 0
+}
+
+.link:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #000;
+  width: 0;
+  height: 2px;
+  -webkit-transition: all .4s cubic-bezier(.35, 1, .33, 1);
+  transition: all .4s cubic-bezier(.35, 1, .33, 1)
+}
+
+.link:hover {
+  color: #000
+}
+
+.link:hover:before {
+  width: 100%
+}
+
+.link-theme:before {
+  background: #007bff
+}
+
+@media only screen and (min-width:250px) {
+  .main {
+    padding-top: 150px;
+  }
+  .container {
+    width: 80%;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  
+@media only screen and (min-width:768px) {
+  .main {
+    padding-top: 150px;
+  }
+  .container {
+    width: 80%;
+  }
+  h1 {
+    font-size: 48px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  .footer {
+    padding: 70px 0
+  }
+  .footer ul {
+    margin-top: 15px
+  }
+  .footer ul li {
+    display: inline-block;
+    margin: 0 0 0 10px
+  }
+ 
+  .footer .foot-content-left {
+    float: left
+  }
+  .footer .foot-content {
+    float: right
+  }
+}
+
+@media only screen and (min-width:992px) {
+  .container {
+    width: 80%;
+  }
+  h1 {
+    font-size: 60px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+
+}
+
+@media only screen and (min-width:1200px) {
+  .container {
+    width: 1160px;
+    width: 80%;
+  }
+  h1 {
+    font-size: 80px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+
+}
+
+/* header   box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1); */
+
+.header {
+  background-color: #fff;
+  position: fixed;
+  width: 80%;
+  z-index: 3;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 20px 0;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px 4px 20px;
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #fff;
+}
+
+.header .logo {
+  color: #007bff;
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 2px 0px;
+  text-decoration: none;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* section */
+
+.section {
+  overflow: hidden;
+  margin: auto;
+  max-width: 1400px;
+}
+
+.section a {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+.section a img {
+  width: 100%;
+  display: block;
+}
+
+.section a span {
+  color: #fff;
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+  font-size: 2em;
+  text-shadow: 1px 1px 0 #000;
+}
+
+.section-split a span {
+  display: none;
+}
+
+.section-split a:hover span {
+  display: block;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 875px) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 0px 0px 0px;
+    margin-left: 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .section-split a {
+    width: 50%;
+  }
+}
+
+
+.footer {
+  font-size: 14px;
+  padding: 40px 0;
+  background: #fff;
+  color: #888
+}
+
+.footer .container {
+  position: relative
+}
+
+.footer ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin-top: 35px
+}
+
+.footer ul li {
+  margin-bottom: 10px
+}
+
+.footer ul a {
+  display: inline-block;
+  position: relative;
+  border: none;
+  padding-bottom: 4px;
+  text-transform: uppercase;
+  color: #000;
+  font-family: Montserrat, helvetica, arial, sans-serif;
+  font-weight: 700;
+  font-family: Montserrat, helvetica, arial, sans-serif;
+  font-weight: 400;
+  color: #888;
+  text-transform: none
+}
+
+.footer ul a:active,
+.footer ul a:focus,
+.footer ul a:hover {
+  outline: 0
+}
+
+.footer ul a:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #000;
+  width: 0;
+  height: 2px;
+  -webkit-transition: all .4s cubic-bezier(.35, 1, .33, 1);
+  transition: all .4s cubic-bezier(.35, 1, .33, 1)
+}
+
+.footer ul a:hover {
+  color: #000
+}
+
+.footer ul a:hover:before {
+  width: 100%
+}
+
+.footer ul a:before {
+  background: #007bff
+}
+
+.footer .col-logo .path-letter {
+  -webkit-transition: all .3s cubic-bezier(.35, 1, .33, 1);
+  transition: all .3s cubic-bezier(.35, 1, .33, 1);
+  opacity: 0;
+  -webkit-transform: translate3d(-10px, 0, 0);
+  transform: translate3d(-10px, 0, 0)
+}
+
+.footer .col-logo:hover .path-letter {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  opacity: 1
+}
+</style>
+<link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
+
+<body class="page-top">
+
+    <header class="header">
+      <a class="logo" style="color: #000; font-family: 'Poppins', sans-serif;" href=".page-top">MA<span style="color: #007bff; font-family: Poppins;">Q</span>ASED</a>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+      <ul class="menu">
+        <li><a href="#one" class="link link-theme link-arrow">PART 1</a></li>
+        <li><a href="#two" class="link link-theme link-arrow">PART 2</a></li>
+        <li><a href="#three" class="link link-theme link-arrow">PART 3</a></li>
+        <li><a href="#four" class="link link-theme link-arrow">PART 4</a></li>
+      </ul>
+    </header>
+  
+    <div>
+
+    <div id="main" class="main">
+
+      <section class="intro">
+
+        <article class="container">
+
+          <h1>
+              Maqased <strong>Faqs</strong>
+            </h1>
+
+          <h2 href=".footer" style="margin-top: 3px;" class="link link-theme link-arrow" title="Let’s Build Something Great">
+              How can we help you?
+            </h2>	
+
+        </article>
+
+      </section>
+      <!-- /intro -->
+      
+      <section class="work">
+
+      <article class="container" id="one">
+
+        <div class="wrapper" style="z-index: 1;">
+    <!-- Accordion Heading One -->
+    <div class="parent-tab">
+      <input type="radio" name="tab" id="tab-1" checked>
+      <label for="tab-1">
+        <span>Q. What are the business opportunities in Dubai for investors?</span>
+        <div class="icon"><i class="fas fa-plus"></i></div>
+      </label>
+      <div class="content">
+        <p>It is important to know as an investor in which business sector they must invest to gain profit. There are many business opportunities like in consulting, construction, import export, freelancing, restaurants, eCommerce business, etc.</p>
+      </div>
+    </div>
+    <!-- Accordion Heading Two -->
+    <div class="parent-tab">
+      <input type="radio" name="tab" id="tab-2">
+      <label for="tab-2">
+        <span>Q. How long does the registration and licensing process take?</span>
+        <div class="icon"><i class="fas fa-plus"></i></div>
+      </label>
+      <div class="content">
+        <p>The process depends on the jurisdiction of each of the departments where the business is being set up. However, if the security checks have been cleared and the application fee and all supporting documentation are present and correct, the registration and licensing process can be completed within two to three days.</p>
+      </div>
+    </div>
+    <div class="parent-tab">
+      <input type="radio" name="tab" id="tab-3">
+      <label for="tab-3">
+        <span>Q. What is the cost in setting up a business in Dubai?</span>
+        <div class="icon"><i class="fas fa-plus"></i></div>
+      </label>
+      <div class="content">
+        <p>The general requirements for business registration and licensing include initial approval request, trade name reservation, trade license issuance and license renewal</p>
+      </div>
+    </div>
+    <div class="parent-tab">
+      <input type="radio" name="tab" id="tab-4">
+      <label for="tab-4">
+        <span>Q. What are the documents required for license issuance?</span>
+        <div class="icon"><i class="fas fa-plus"></i></div>
+      </label>
+      <div class="content">
+        <p>You may require initial approval receipt, copy of lease contract, duly attested memorandum of association, valid passport, and approval from other government entities.</p>
+      </div>
+    </div>
+   
+    <!-- Accordion Heading Four -->
+    <div class="parent-tab">
+      <input type="radio" name="tab" id="tab-5">
+      <label for="tab-5">
+        <span>Q. What are the business registration categories in Dubai?</span>
+        <div class="icon"><i class="fas fa-plus"></i></div>
+      </label>
+      <div class="content">
+        <p>There are different types of business setup categories in UAE. They differ by the terms and conditions, the amount of capital you will have to invest.<br>
+        	<br>
+        	General partnership company<br>
+Share partnership company<br>
+Limited liability company<br>
+Joint venture company<br>
+Private shareholding company<br>
+Public shareholding company<br>
+Sole proprietorship<br>
+Civil company</p>
+      </div>
+    </div>
+  </div>
+  <style type="text/css">::selection{
+  background: rgb(0,123,255,0.3);
+}
+.wrapper{
+  max-width: 100%;
+  padding: 0 px;
+}
+.wrapper .parent-tab,
+.wrapper .child-tab{
+  margin-bottom: 8px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.18);
+}
+.wrapper .parent-tab label,
+.wrapper .child-tab label{
+  background: #007bff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 3px;
+  position: relative;
+  z-index: 99;
+  transition: all 0.3s ease;
+}
+.wrapper .parent-tab label:hover{
+  background: #006fe6;
+}
+.parent-tab input:checked ~ label,
+.child-tab input:checked ~ label{
+  border-radius: 3px 3px 0 0;
+  background: #006fe6;
+}
+.wrapper label span{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-shadow: 0 -1px 1px #0056b3;
+}
+.wrapper .child-tab label span{
+  font-size: 17px;
+}
+.parent-tab label .icon{
+  position: relative;
+  height: 30px;
+  width: 30px;
+  font-size: 15px;
+  color: #007bff;
+  display: block;
+  background: #fff;
+  border-radius: 50%;
+  text-shadow: 0 -1px 1px #0056b3;
+}
+.wrapper .child-tab label .icon{
+  height: 27px;
+  width: 27px;
+}
+.parent-tab label .icon i{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.parent-tab input:checked ~ label .icon i:before,
+.child-tab input:checked ~ label .icon i:before{
+  content: '\f068';
+}
+.wrapper .parent-tab .content,
+.wrapper .child-tab .sub-content{
+  max-height: 0px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 0 0 3px 3px;
+  transition: all 0.4s ease;
+}
+.parent-tab input:checked ~ .content,
+.child-tab input:checked ~ .sub-content{
+  max-height: 100vh;
+}
+.tab-3 input:checked ~ .content{
+  padding: 15px 20px;
+}
+.parent-tab .content p,
+.child-tab .sub-content p{
+  padding: 15px 20px;
+  font-size: 16px;
+}
+.child-tab .sub-content p{
+  font-size: 15px;
+}
+input[type="radio"],
+input[type="checkbox"]{
+  display: none;
+}</style>
+
+      </article>
+      </article>
+
+    </section>
+    <!-- /work -->
+      
+      <footer class="footer">
+
+      <div class="container">
+        <hr>
+        <article class="foot-content-left">
+          <ul>&copy;2016 by Pixel Strecher</ul>
+        </article>
+
+        <article class="foot-content">
+          <ul>
+            <li><a href="pixelstrecher@gmail.com">pixelstrecher@gmail.com</a></li>
+            <li class="social"><a href="https://www.facebook.com/">Facebook</a></li>
+            <li class="social"><a href="https://twitter.com/">Twitter</a></li>
+            <li class="social"><a href="https://www.linkedin.com/company/">LinkedIn</a></li>
+          </ul>
+        </article>
+
+      </div>
+
+    </footer>
+    <!-- /footer -->
+
+      
+    </div>
+
+
+  </div>
+  <!-- end div container -->
+  <script type="text/javascript">
+  	
+$('a').click(function(e){
+    e.preventDefault();
+    $('body, html').animate({
+        scrollTop: $( $(this).attr('href') ).offset().top - 120
+    }, 1000);
+});
+  </script>
+  <script src="https://kit.fontawesome.com/83fe534cf6.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
